@@ -1,0 +1,99 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "...",
+    "version": "1.0.0",
+    "title": "none error test case",
+    "termsOfService": "http://swagger.io/terms/"
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "testPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TestInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TestRes"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "testPut",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TestInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TestRes"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TestRes": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "TestInput": {
+      "type": "object",
+      "required": [
+        "key",
+      ],
+      "properties": {
+        "primarySite": {
+          "description": "Primary site",
+          "type": "string",
+          "maxLength": 25,
+          "x-go-name": "SeoTemplateName",
+          "x-nullable": true
+        },
+        "justForShow": {
+          "type": "string",
+          "maxLength": 25
+        }
+      }
+    }
+  }
+}
